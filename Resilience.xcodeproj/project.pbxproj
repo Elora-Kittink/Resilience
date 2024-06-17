@@ -11,6 +11,12 @@
 		D5AB5A082C20353500CE6C53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB5A072C20353500CE6C53 /* ContentView.swift */; };
 		D5AB5A0A2C20353700CE6C53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5AB5A092C20353700CE6C53 /* Assets.xcassets */; };
 		D5AB5A0D2C20353700CE6C53 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5AB5A0C2C20353700CE6C53 /* Preview Assets.xcassets */; };
+		D5AB5A152C20377100CE6C53 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB5A142C20377100CE6C53 /* Plant.swift */; };
+		D5AB5A182C203A1500CE6C53 /* Zone.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB5A172C203A1500CE6C53 /* Zone.swift */; };
+		D5AB5A202C2067EA00CE6C53 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB5A1C2C2067EA00CE6C53 /* TabBarPresenter.swift */; };
+		D5AB5A212C2067EA00CE6C53 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB5A1D2C2067EA00CE6C53 /* TabBarView.swift */; };
+		D5AB5A222C2067EA00CE6C53 /* TabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB5A1E2C2067EA00CE6C53 /* TabBarInteractor.swift */; };
+		D5AB5A232C2067EA00CE6C53 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB5A1F2C2067EA00CE6C53 /* TabBarViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,12 @@
 		D5AB5A072C20353500CE6C53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D5AB5A092C20353700CE6C53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5AB5A0C2C20353700CE6C53 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D5AB5A142C20377100CE6C53 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		D5AB5A172C203A1500CE6C53 /* Zone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zone.swift; sourceTree = "<group>"; };
+		D5AB5A1C2C2067EA00CE6C53 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
+		D5AB5A1D2C2067EA00CE6C53 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		D5AB5A1E2C2067EA00CE6C53 /* TabBarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInteractor.swift; sourceTree = "<group>"; };
+		D5AB5A1F2C2067EA00CE6C53 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +63,8 @@
 		D5AB5A042C20353500CE6C53 /* Resilience */ = {
 			isa = PBXGroup;
 			children = (
-				D5AB5A052C20353500CE6C53 /* ResilienceApp.swift */,
-				D5AB5A072C20353500CE6C53 /* ContentView.swift */,
+				D5AB5A192C20660000CE6C53 /* Modules */,
+				D5AB5A132C2036BB00CE6C53 /* Data */,
 				D5AB5A092C20353700CE6C53 /* Assets.xcassets */,
 				D5AB5A0B2C20353700CE6C53 /* Preview Content */,
 			);
@@ -65,6 +77,52 @@
 				D5AB5A0C2C20353700CE6C53 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D5AB5A132C2036BB00CE6C53 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D5AB5A162C203A0400CE6C53 /* Models */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D5AB5A162C203A0400CE6C53 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D5AB5A142C20377100CE6C53 /* Plant.swift */,
+				D5AB5A172C203A1500CE6C53 /* Zone.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D5AB5A192C20660000CE6C53 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D5AB5A1B2C20662100CE6C53 /* TabBar */,
+				D5AB5A1A2C20661300CE6C53 /* App */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D5AB5A1A2C20661300CE6C53 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D5AB5A052C20353500CE6C53 /* ResilienceApp.swift */,
+				D5AB5A072C20353500CE6C53 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D5AB5A1B2C20662100CE6C53 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D5AB5A1D2C2067EA00CE6C53 /* TabBarView.swift */,
+				D5AB5A1E2C2067EA00CE6C53 /* TabBarInteractor.swift */,
+				D5AB5A1C2C2067EA00CE6C53 /* TabBarPresenter.swift */,
+				D5AB5A1F2C2067EA00CE6C53 /* TabBarViewModel.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +196,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5AB5A082C20353500CE6C53 /* ContentView.swift in Sources */,
+				D5AB5A182C203A1500CE6C53 /* Zone.swift in Sources */,
+				D5AB5A202C2067EA00CE6C53 /* TabBarPresenter.swift in Sources */,
+				D5AB5A212C2067EA00CE6C53 /* TabBarView.swift in Sources */,
+				D5AB5A222C2067EA00CE6C53 /* TabBarInteractor.swift in Sources */,
+				D5AB5A232C2067EA00CE6C53 /* TabBarViewModel.swift in Sources */,
+				D5AB5A152C20377100CE6C53 /* Plant.swift in Sources */,
 				D5AB5A062C20353500CE6C53 /* ResilienceApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
