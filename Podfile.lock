@@ -1,0 +1,22 @@
+PODS:
+  - UtilsKit (3.6.1):
+    - UtilsKit/UtilsKitUI (= 3.6.1)
+  - UtilsKit/UtilsKitCore (3.6.1)
+  - UtilsKit/UtilsKitHelpers (3.6.1):
+    - UtilsKit/UtilsKitCore
+  - UtilsKit/UtilsKitUI (3.6.1):
+    - UtilsKit/UtilsKitHelpers
+
+DEPENDENCIES:
+  - UtilsKit
+
+SPEC REPOS:
+  trunk:
+    - UtilsKit
+
+SPEC CHECKSUMS:
+  UtilsKit: 4b55bb34470f0a02769dec76ca9275e4b8a297de
+
+PODFILE CHECKSUM: 7f847bad77d8c03ebb6d06267e5863e22c136700
+
+COCOAPODS: 1.15.2

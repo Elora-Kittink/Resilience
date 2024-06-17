@@ -6,3 +6,35 @@
 import Foundation
 import SwiftUI
 
+struct TabBarView: View {
+	var body: some View {
+		TabView {
+			DashboardView()
+				.tabItem {
+					Label("Dashboard", systemImage: "list.dash.header.rectangle")
+				}
+			GardenView()
+				.tabItem {
+				Label("Garden", systemImage: "tree")
+			}
+			HouseView()	
+				.tabItem {
+				Label("House", systemImage: "house.lodge")
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+#Preview {
+	TabBarView()
+}
