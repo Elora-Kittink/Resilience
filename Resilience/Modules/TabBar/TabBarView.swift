@@ -13,14 +13,14 @@ struct TabBarView: View {
 				.tabItem {
 					Label("Dashboard", systemImage: "list.dash.header.rectangle")
 				}
-			GardenView()
+			GardenView(viewModel: GardenViewModel())
 				.tabItem {
-				Label("Garden", systemImage: "tree")
-			}
-			HouseView()	
+					Label("Garden", systemImage: "tree")
+				}
+			HouseView()
 				.tabItem {
-				Label("House", systemImage: "house.lodge")
-			}
+					Label("House", systemImage: "house.lodge")
+				}
 		}
 	}
 }

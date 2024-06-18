@@ -3,4 +3,6 @@
 //  Created by Elora on 17/06/2024.
 //
 
-class GardenViewModel: ViewModel { }
+class GardenViewModel: ViewModel {
+	let plants = MockDatas.plants
+}

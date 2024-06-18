@@ -1,21 +1,30 @@
-//  GardenViewController.swift
+//  DashboardViewController.swift
 //
 //  Created by Elora on 17/06/2024.
 //
 
+import Foundation
 import SwiftUI
 
-struct GardenView: View {
+struct DashboardView: View {
 	var body: some View {
-		Text("Garden view")
+		Button(action: {
+			print("Bouton + appuyé")
+		}) {
+			Image(systemName: "plus")
+				.resizable()
+				.frame(width: 20, height: 20)
+				.padding()
+		}
 	}
 }
 
-//class GardenViewController: BaseViewController
+
+//class DashboardViewController: BaseViewController
 //<
-//	GardenViewModel,
-//	GardenPresenter,
-//	GardenInteractor
+//	DashboardViewModel,
+//	DashboardPresenter,
+//	DashboardInteractor
 //> {
 //	
 //	// MARK: - Outlets
