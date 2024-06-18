@@ -7,18 +7,30 @@ import Foundation
 import SwiftUI
 
 struct DashboardView: View {
+	
+	// MARK: - Variables
+	private let interactor = DashboardInteractor()
+	
+	// MARK: State
+	@ObservedObject var viewModel: DashboardViewModel
+	
+	
 	var body: some View {
 		Button(action: {
 			print("Bouton + appuyé")
 		}) {
-			Image(systemName: "plus")
+			Image(systemName: "list.dash.header.rectangle")
 				.resizable()
-				.frame(width: 20, height: 20)
+				.frame(width: 60, height: 60)
 				.padding()
 		}
 	}
 }
 
+
+#Preview {
+	DashboardView(viewModel: DashboardViewModel())
+}
 
 //class DashboardViewController: BaseViewController
 //<

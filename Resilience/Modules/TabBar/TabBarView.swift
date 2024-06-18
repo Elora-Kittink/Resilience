@@ -9,7 +9,7 @@ import SwiftUI
 struct TabBarView: View {
 	var body: some View {
 		TabView {
-			DashboardView()
+			DashboardView(viewModel: DashboardViewModel())
 				.tabItem {
 					Label("Dashboard", systemImage: "list.dash.header.rectangle")
 				}

@@ -43,6 +43,12 @@ struct GardenView: View {
 }
 
 
+
+
+#Preview {
+	GardenView(viewModel: GardenViewModel())
+}
+
 //class GardenViewController: BaseViewController
 //<
 //	GardenViewModel,
