@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8DE04187E6D9ED9D8E2A2B6E /* Pods_Resilience.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFC5FF11E15FF595B158F4D7 /* Pods_Resilience.framework */; };
+		D5A2271C2C22D45D00BA2C71 /* HostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2271B2C22D45D00BA2C71 /* HostingViewController.swift */; };
+		D5A2271E2C22DC1F00BA2C71 /* CLAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2271D2C22DC1F00BA2C71 /* CLAView.swift */; };
+		D5A227202C22DC6100BA2C71 /* CLABaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A2271F2C22DC6100BA2C71 /* CLABaseView.swift */; };
+		D5A227222C22DCA100BA2C71 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A227212C22DCA100BA2C71 /* BaseView.swift */; };
+		D5A227252C22DD2500BA2C71 /* DefaultLogType+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A227242C22DD2500BA2C71 /* DefaultLogType+Custom.swift */; };
 		D5A594BD2C21C9360094A978 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A594BC2C21C9360094A978 /* Route.swift */; };
 		D5A594C32C21CB390094A978 /* TodoListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A594BF2C21CB390094A978 /* TodoListPresenter.swift */; };
 		D5A594C42C21CB390094A978 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A594C02C21CB390094A978 /* TodoListView.swift */; };
@@ -49,6 +54,11 @@
 /* Begin PBXFileReference section */
 		2E97034A5C9D32B6CFB1F7C4 /* Pods-Resilience.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Resilience.release.xcconfig"; path = "Target Support Files/Pods-Resilience/Pods-Resilience.release.xcconfig"; sourceTree = "<group>"; };
 		CFC5FF11E15FF595B158F4D7 /* Pods_Resilience.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Resilience.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5A2271B2C22D45D00BA2C71 /* HostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingViewController.swift; sourceTree = "<group>"; };
+		D5A2271D2C22DC1F00BA2C71 /* CLAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLAView.swift; sourceTree = "<group>"; };
+		D5A2271F2C22DC6100BA2C71 /* CLABaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLABaseView.swift; sourceTree = "<group>"; };
+		D5A227212C22DCA100BA2C71 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		D5A227242C22DD2500BA2C71 /* DefaultLogType+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultLogType+Custom.swift"; sourceTree = "<group>"; };
 		D5A594BC2C21C9360094A978 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		D5A594BF2C21CB390094A978 /* TodoListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListPresenter.swift; sourceTree = "<group>"; };
 		D5A594C02C21CB390094A978 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
@@ -108,6 +118,22 @@
 				2E97034A5C9D32B6CFB1F7C4 /* Pods-Resilience.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D5A2271A2C22D44300BA2C71 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				D5A2271B2C22D45D00BA2C71 /* HostingViewController.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		D5A227232C22DCF500BA2C71 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D5A227242C22DD2500BA2C71 /* DefaultLogType+Custom.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D5A594BB2C21C92A0094A978 /* Route */ = {
@@ -273,6 +299,8 @@
 		D5AB5A412C20820500CE6C53 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				D5A227232C22DCF500BA2C71 /* Extensions */,
+				D5A2271A2C22D44300BA2C71 /* SwiftUI */,
 				D5A594BB2C21C92A0094A978 /* Route */,
 				D5AB5A492C20839000CE6C53 /* Base */,
 				D5AB5A422C20823100CE6C53 /* CleanArchi */,
@@ -295,6 +323,9 @@
 			children = (
 				D5AB5A4A2C2083A800CE6C53 /* BaseViewController.swift */,
 				D5AB5A4F2C208B6000CE6C53 /* LoaderView.swift */,
+				D5A2271D2C22DC1F00BA2C71 /* CLAView.swift */,
+				D5A2271F2C22DC6100BA2C71 /* CLABaseView.swift */,
+				D5A227212C22DCA100BA2C71 /* BaseView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -423,8 +454,10 @@
 			files = (
 				D5AB5A082C20353500CE6C53 /* ContentView.swift in Sources */,
 				D5AB5A182C203A1500CE6C53 /* Zone.swift in Sources */,
+				D5A227252C22DD2500BA2C71 /* DefaultLogType+Custom.swift in Sources */,
 				D5AB5A202C2067EA00CE6C53 /* TabBarPresenter.swift in Sources */,
 				D5AB5A212C2067EA00CE6C53 /* TabBarView.swift in Sources */,
+				D5A227202C22DC6100BA2C71 /* CLABaseView.swift in Sources */,
 				D5A594C32C21CB390094A978 /* TodoListPresenter.swift in Sources */,
 				D5A594C42C21CB390094A978 /* TodoListView.swift in Sources */,
 				D5A594C52C21CB390094A978 /* TodoListInteractor.swift in Sources */,
@@ -434,6 +467,7 @@
 				D5AB5A4B2C2083A800CE6C53 /* BaseViewController.swift in Sources */,
 				D5A594CD2C21D3670094A978 /* MockDatas.swift in Sources */,
 				D5AB5A482C2082F500CE6C53 /* ViewModel.swift in Sources */,
+				D5A2271C2C22D45D00BA2C71 /* HostingViewController.swift in Sources */,
 				D5A594C82C21CC430094A978 /* TodoTask.swift in Sources */,
 				D5AB5A2C2C2078A000CE6C53 /* DashboardView.swift in Sources */,
 				D5AB5A2D2C2078A000CE6C53 /* DashboardInteractor.swift in Sources */,
@@ -443,6 +477,7 @@
 				D5AB5A152C20377100CE6C53 /* Plant.swift in Sources */,
 				D5AB5A062C20353500CE6C53 /* ResilienceApp.swift in Sources */,
 				D5AB5A462C2082D600CE6C53 /* Presenter.swift in Sources */,
+				D5A2271E2C22DC1F00BA2C71 /* CLAView.swift in Sources */,
 				D5AB5A442C20825700CE6C53 /* Interactor.swift in Sources */,
 				D5A594BD2C21C9360094A978 /* Route.swift in Sources */,
 				D5AB5A352C20817000CE6C53 /* HousePresenter.swift in Sources */,
@@ -453,6 +488,7 @@
 				D5A594CB2C21CCB50094A978 /* TodoTaskPriority.swift in Sources */,
 				D5AB5A402C20818400CE6C53 /* GardenViewModel.swift in Sources */,
 				D5AB5A372C20817000CE6C53 /* HouseInteractor.swift in Sources */,
+				D5A227222C22DCA100BA2C71 /* BaseView.swift in Sources */,
 				D5AB5A382C20817000CE6C53 /* HouseViewModel.swift in Sources */,
 				D5A594D02C21DB410094A978 /* TodoRowView.swift in Sources */,
 			);
@@ -589,7 +625,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Resilience/Preview Content\"";
-				DEVELOPMENT_TEAM = N99GL92MJ5;
+				DEVELOPMENT_TEAM = TD554J24WN;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -598,12 +634,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Exomind.Resilience;
+				PRODUCT_BUNDLE_IDENTIFIER = Resilience;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -620,7 +657,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Resilience/Preview Content\"";
-				DEVELOPMENT_TEAM = N99GL92MJ5;
+				DEVELOPMENT_TEAM = TD554J24WN;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -629,12 +666,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Exomind.Resilience;
+				PRODUCT_BUNDLE_IDENTIFIER = Resilience;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -13,7 +13,7 @@ struct TodoRowView: View {
 	@FocusState private var isActive: Bool
 	var body: some View {
 		HStack(spacing: 8) {
-			if !isActive && task.name.isEmpty {
+			if !task.name.isEmpty {
 				Button(action: {}, label: {
 					Image(systemName: task.isCompleted ? "checkmark.circle.fill" : "circle")
 						.font(.title2)
@@ -26,7 +26,7 @@ struct TodoRowView: View {
 				.strikethrough(task.isCompleted)
 				.foregroundColor(task.isCompleted ? .gray : .primary)
 				.focused($isActive)
-			if !isActive && task.name.isEmpty {
+			if !task.name.isEmpty {
 				Menu {
 					ForEach(TodoTaskPriority.allCases, id: \.rawValue) { priority in
 						Button(action: { task.priority = priority }, label: {

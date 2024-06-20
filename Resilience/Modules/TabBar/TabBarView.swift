@@ -9,11 +9,11 @@ import SwiftUI
 struct TabBarView: View {
 	var body: some View {
 		TabView {
-			DashboardView(viewModel: DashboardViewModel())
+			DashboardView()
 				.tabItem {
-					Label("Dashboard", systemImage: "list.dash.header.rectangle")
+					Label("Dashboard", systemImage: "list.bullet.clipboard")
 				}
-			GardenView(viewModel: GardenViewModel())
+			GardenView()
 				.tabItem {
 					Label("Garden", systemImage: "tree")
 				}

@@ -14,44 +14,21 @@ struct DashboardView: View {
 	// MARK: State
 	@ObservedObject var viewModel: DashboardViewModel
 	
-	
 	var body: some View {
-		Button(action: {
-			print("Bouton + appuyé")
-		}) {
-			Image(systemName: "list.dash.header.rectangle")
-				.resizable()
-				.frame(width: 60, height: 60)
-				.padding()
+		NavigationView {
+			NavigationLink(destination: TodoListView()) {
+				Image(systemName: "list.bullet.rectangle")
+			}
 		}
+	}
+	
+	init() {
+		self.viewModel = .init()
+		self.interactor.set(viewModel: self.viewModel)
 	}
 }
 
 
 #Preview {
-	DashboardView(viewModel: DashboardViewModel())
+	DashboardView()
 }
-
-//class DashboardViewController: BaseViewController
-//<
-//	DashboardViewModel,
-//	DashboardPresenter,
-//	DashboardInteractor
-//> {
-//	
-//	// MARK: - Outlets
-//	
-//	// MARK: - Variables
-//	
-//	// MARK: - View life cycle
-//	override func viewDidLoad() {
-//		super.viewDidLoad()
-//	}
-//	
-//	// MARK: - Refresh
-//	override func refreshUI() {
-//		super.refreshUI()
-//	}
-//
-//	// MARK: - Actions
-//}

@@ -5,31 +5,20 @@
 
 import SwiftUI
 
-struct HouseView: View {
+struct HouseView: CLAView {
+	
+	// MARK: - Variables
+	private let interactor = HouseInteractor()
+
+	//	MARK: - State
+	@ObservedObject var viewModel: HouseViewModel
+	
 	var body: some View {
 		Text("House view")
 	}
+	
+	init() {
+		self.viewModel = .init()
+		self.interactor.set(viewModel: self.viewModel)
+	}
 }
-//class HouseViewController: BaseViewController
-//<
-//	HouseViewModel,
-//	HousePresenter,
-//	HouseInteractor
-//> {
-//	
-//	// MARK: - Outlets
-//	
-//	// MARK: - Variables
-//	
-//	// MARK: - View life cycle
-//	override func viewDidLoad() {
-//		super.viewDidLoad()
-//	}
-//	
-//	// MARK: - Refresh
-//	override func refreshUI() {
-//		super.refreshUI()
-//	}
-//
-//	// MARK: - Actions
-//}

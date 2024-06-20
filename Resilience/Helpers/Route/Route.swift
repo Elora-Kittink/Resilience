@@ -12,4 +12,10 @@ import UIKit
 @MainActor
 enum Route {
 	
+	@MainActor
+	enum Dashboard {
+		
+		static func showTodoList() {
+		}
+	}
 }

@@ -4,8 +4,9 @@
 //
 
 import SwiftUI
+import SwiftData
 
-struct TodoListView: View {
+struct TodoListView: CLAView {
 	
 	// MARK: - Variables
 	private let interactor = TodoListInteractor()
@@ -16,24 +17,37 @@ struct TodoListView: View {
 	var body: some View {
 		List {
 			Section(self.viewModel.activeSectionTitle) {
-				ForEach(self.viewModel.activeList.indices, id: \.self) { index in
-					TodoRowView(task: $viewModel.activeList[index])
+				ForEach(viewModel.taskList.indices.filter { !viewModel.taskList[$0].isCompleted }, id: \.self) { index in
+					TodoRowView(task: $viewModel.taskList[index])
+					
+				}
+			}
+			Section("Done") {
+				ForEach(self.viewModel.taskList.indices.filter { self.viewModel.taskList[$0].isCompleted }, id: \.self) { index in
+					TodoRowView(task: $viewModel.taskList[index])
 				}
 			}
 		}
-		.toolbar {
-			ToolbarItem(placement: .bottomBar) {
-				Button(action: {
-					print("nouvelle task !")
-				}, label: {
-					Image(systemName: "plus")
-						.font(.system(size: 42))
-				})
-			}
+		
+		Spacer()
+		
+		Button(action: {
+			self.interactor.createNewTask()
+		}) {
+			Image(systemName: "plus")
+				.resizable()
+				.frame(width: 20, height: 20)
+				.padding()
 		}
+	}
+	
+	init() {
+		self.viewModel = .init()
+		self.interactor.set(viewModel: self.viewModel)
+		self.interactor.refresh()
 	}
 }
 
 #Preview {
-	TodoListView(viewModel: TodoListViewModel())
+	TodoListView()
 }

@@ -3,7 +3,10 @@
 //  Created by Elora on 18/06/2024.
 //
 
-class TodoListViewModel: ViewModel { 
-	var activeList: [TodoTask] = MockDatas.tasks
-	var activeSectionTitle = ""
+import SwiftUI
+
+class TodoListViewModel: ViewModel {
+	@Published var taskList: [TodoTask] = MockDatas.tasks
+	var activeList: [TodoTask] = []
+	var activeSectionTitle = "erjhd"
 }

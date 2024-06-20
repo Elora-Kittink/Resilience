@@ -40,35 +40,16 @@ struct GardenView: View {
 			}
 		}
 	}
+	
+	init() {
+		self.viewModel = .init()
+		self.interactor.set(viewModel: self.viewModel)
+	}
 }
 
 
 
 
 #Preview {
-	GardenView(viewModel: GardenViewModel())
+	GardenView()
 }
-
-//class GardenViewController: BaseViewController
-//<
-//	GardenViewModel,
-//	GardenPresenter,
-//	GardenInteractor
-//> {
-//	
-//	// MARK: - Outlets
-//	
-//	// MARK: - Variables
-//	
-//	// MARK: - View life cycle
-//	override func viewDidLoad() {
-//		super.viewDidLoad()
-//	}
-//	
-//	// MARK: - Refresh
-//	override func refreshUI() {
-//		super.refreshUI()
-//	}
-//
-//	// MARK: - Actions
-//}
