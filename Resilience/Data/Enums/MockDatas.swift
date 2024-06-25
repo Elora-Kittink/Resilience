@@ -150,19 +150,19 @@ enum MockDatas {
 			hardiness: -18,
 			notes: "Tailler en hiver"
 		),
-		Plant(
-			id: "11",
-			zone: zone1,
-			genre: "Fleur éternelle",
-			variety: "Infinita",
-			description: "Un arbre en fleur toute l'année",
-			bloomingStart: Calendar.current.date(byAdding: .year, value: -1, to: Date()),
-			bloomingEnd: Calendar.current.date(byAdding: .year, value: 1, to: Date()),
-			fruitingStart: nil,
-			fruitingEnd: nil,
-			hardiness: 0,
-			notes: "Toujours en fleur"
-		),
+//		Plant(
+//			id: "11",
+//			zone: zone1,
+//			genre: "Fleur éternelle",
+//			variety: "Infinita",
+//			description: "Un arbre en fleur toute l'année",
+//			bloomingStart: Calendar.current.date(from: DateComponents(year: 2023, month: 1, day: 1)),
+//			bloomingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 12, day: 31)),
+//			fruitingStart: nil,
+//			fruitingEnd: nil,
+//			hardiness: 0,
+//			notes: "Toujours en fleur"
+//		),
 		Plant(
 			id: "12",
 			zone: zone2,

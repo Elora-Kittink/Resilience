@@ -22,6 +22,7 @@
 		D5A594CB2C21CCB50094A978 /* TodoTaskPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A594CA2C21CCB50094A978 /* TodoTaskPriority.swift */; };
 		D5A594CD2C21D3670094A978 /* MockDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A594CC2C21D3670094A978 /* MockDatas.swift */; };
 		D5A594D02C21DB410094A978 /* TodoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A594CF2C21DB410094A978 /* TodoRowView.swift */; };
+		D5A706F22C2B146E002AEC7D /* BloomingChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A706F12C2B146E002AEC7D /* BloomingChart.swift */; };
 		D5AB5A062C20353500CE6C53 /* ResilienceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB5A052C20353500CE6C53 /* ResilienceApp.swift */; };
 		D5AB5A082C20353500CE6C53 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AB5A072C20353500CE6C53 /* ContentView.swift */; };
 		D5AB5A0A2C20353700CE6C53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5AB5A092C20353700CE6C53 /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		D5A594CA2C21CCB50094A978 /* TodoTaskPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTaskPriority.swift; sourceTree = "<group>"; };
 		D5A594CC2C21D3670094A978 /* MockDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatas.swift; sourceTree = "<group>"; };
 		D5A594CF2C21DB410094A978 /* TodoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRowView.swift; sourceTree = "<group>"; };
+		D5A706F12C2B146E002AEC7D /* BloomingChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomingChart.swift; sourceTree = "<group>"; };
 		D5AB5A022C20353500CE6C53 /* Resilience.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Resilience.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5AB5A052C20353500CE6C53 /* ResilienceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResilienceApp.swift; sourceTree = "<group>"; };
 		D5AB5A072C20353500CE6C53 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -173,6 +175,14 @@
 			path = TodoRowView;
 			sourceTree = "<group>";
 		};
+		D5A706F02C2B121F002AEC7D /* BloomingChart */ = {
+			isa = PBXGroup;
+			children = (
+				D5A706F12C2B146E002AEC7D /* BloomingChart.swift */,
+			);
+			path = BloomingChart;
+			sourceTree = "<group>";
+		};
 		D5AB59F92C20353500CE6C53 = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +243,7 @@
 		D5AB5A192C20660000CE6C53 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D5A706F02C2B121F002AEC7D /* BloomingChart */,
 				D5A594BE2C21CA790094A978 /* TodoList */,
 				D5AB5A242C20768000CE6C53 /* Dashoboard */,
 				D5AB5A302C20815900CE6C53 /* Garden */,
@@ -510,6 +521,7 @@
 				D5A227222C22DCA100BA2C71 /* BaseView.swift in Sources */,
 				D5AB5A382C20817000CE6C53 /* HouseViewModel.swift in Sources */,
 				D5A594D02C21DB410094A978 /* TodoRowView.swift in Sources */,
+				D5A706F22C2B146E002AEC7D /* BloomingChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
