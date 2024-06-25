@@ -12,10 +12,11 @@ class TodoListInteractor: Interactor
 > {
 	func refresh() {
 		self.presenter.displayTitle()
+		self.presenter.displayTodoList()
 	}
 	
 	func createNewTask() {
-		let newTask = TodoTask(id: UUID().uuidString, name: "", isCompleted: false, priority: .normal)
+		let newTask = TodoTask(id: UUID().uuidString, name: "", isCompleted: false, priority: .high)
 		self.presenter.displayNewTask(task: newTask)
 	}
 }

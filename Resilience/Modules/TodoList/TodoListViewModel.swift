@@ -6,7 +6,10 @@
 import SwiftUI
 
 class TodoListViewModel: ViewModel {
-	@Published var taskList: [TodoTask] = MockDatas.tasks
-	var activeList: [TodoTask] = []
-	var activeSectionTitle = "erjhd"
+	
+	var list: [TodoTask] = MockDatas.tasks
+	
+	@Published var doneTaskList: [TodoTask] = MockDatas.tasks.filter { $0.isCompleted }
+	@Published var activeTaskList: [TodoTask] = MockDatas.tasks.filter { !$0.isCompleted }
+	var activeSectionTitle = ""
 }

@@ -9,16 +9,22 @@ import Foundation
 import SwiftUI
 
 struct TodoRowView: View {
+	
 	@Binding var task: TodoTask
 	@FocusState private var isActive: Bool
+	
 	var body: some View {
 		HStack(spacing: 8) {
 			if !task.name.isEmpty {
-				Button(action: {}, label: {
+				Button(action: {
+					withAnimation(.snappy) {
+						task.isCompleted.toggle()
+					}
+				}, label: {
 					Image(systemName: task.isCompleted ? "checkmark.circle.fill" : "circle")
 						.font(.title2)
 						.contentShape(.rect)
-						.foregroundStyle(task.isCompleted ? .gray : .primary)
+						.foregroundStyle(task.isCompleted ? .gray : .accentColor)
 						.contentTransition(.symbolEffect(.replace))
 				})
 			}
@@ -33,7 +39,7 @@ struct TodoRowView: View {
 							HStack {
 								Text(priority.rawValue)
 								
-								if task.priority == priority { Image("checkmark")}
+								if task.priority == priority { Image(systemName: "checkmark")}
 							}
 						})
 					}

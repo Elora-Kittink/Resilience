@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TodoTask {
+struct TodoTask: Equatable, Hashable {
 	let id: String
 	var name: String
 	var isCompleted: Bool

@@ -25,4 +25,12 @@ enum TodoTaskPriority: String, CaseIterable {
 				.red
 		}
 	}
+	
+	var sortedOrder: Int {
+		switch self {
+		case .normal: 0
+		case .medium: 1
+		case .high: 2
+		}
+	}
 }

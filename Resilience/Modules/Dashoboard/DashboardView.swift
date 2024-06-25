@@ -13,13 +13,29 @@ struct DashboardView: View {
 	
 	// MARK: State
 	@ObservedObject var viewModel: DashboardViewModel
+	@State private var showSheet = false
+	@State private var fullScreen = false
 	
 	var body: some View {
-		NavigationView {
-			NavigationLink(destination: TodoListView()) {
-				Image(systemName: "list.bullet.rectangle")
-			}
+//		NavigationView {
+//			NavigationLink(destination: TodoListView()) {
+//				Image(systemName: "list.bullet.rectangle")
+//			}
+//		}
+		Button(action: {
+			showSheet.toggle()
+		}) {
+			Image(systemName: "list.bullet.rectangle")
+		}.sheet(isPresented: $showSheet) {
+			TodoListView()
 		}
+//		Button(action: {
+//			fullScreen.toggle()
+//		}) {
+//			Image(systemName: "list.bullet.rectangle")
+//		}.fullScreenCover(isPresented: $fullScreen) {
+//			TodoListView()
+//		}
 	}
 	
 	init() {

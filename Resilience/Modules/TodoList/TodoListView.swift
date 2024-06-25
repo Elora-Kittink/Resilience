@@ -12,39 +12,48 @@ struct TodoListView: CLAView {
 	private let interactor = TodoListInteractor()
 	
 	// MARK: State
-	@ObservedObject var viewModel: TodoListViewModel
+	@ObservedObject var viewModel = TodoListViewModel()
 	
 	var body: some View {
-		List {
-			Section(self.viewModel.activeSectionTitle) {
-				ForEach(viewModel.taskList.indices.filter { !viewModel.taskList[$0].isCompleted }, id: \.self) { index in
-					TodoRowView(task: $viewModel.taskList[index])
-					
+		VStack {
+			List {
+				Section(self.viewModel.activeSectionTitle) {
+					ForEach(viewModel.activeTaskList, id: \.id) { task in
+						let index = self.viewModel.activeTaskList.firstIndex(of: task) ?? 0
+						TodoRowView(task: $viewModel.activeTaskList[index])
+					}
+				}
+				
+				Section("Done") {
+					ForEach(self.viewModel.doneTaskList, id: \.id) { task in
+						let index = self.viewModel.doneTaskList.firstIndex(of: task) ?? 0
+						TodoRowView(task: $viewModel.doneTaskList[index])
+					}
 				}
 			}
-			Section("Done") {
-				ForEach(self.viewModel.taskList.indices.filter { self.viewModel.taskList[$0].isCompleted }, id: \.self) { index in
-					TodoRowView(task: $viewModel.taskList[index])
-				}
+			.transition(.slide)
+			.onChange(of: self.viewModel.activeTaskList) {
+				self.interactor.refresh()
+			}
+			.onChange(of: self.viewModel.doneTaskList) {
+				self.interactor.refresh()
+			}
+			
+			Spacer(minLength: 32)
+			
+			Button(action: {
+				self.interactor.createNewTask()
+			}) {
+				Image(systemName: "plus.circle.fill").font(.system(.largeTitle))
 			}
 		}
-		
-		Spacer()
-		
-		Button(action: {
-			self.interactor.createNewTask()
-		}) {
-			Image(systemName: "plus")
-				.resizable()
-				.frame(width: 20, height: 20)
-				.padding()
+		.onAppear {
+			self.interactor.refresh()
 		}
 	}
 	
 	init() {
-		self.viewModel = .init()
 		self.interactor.set(viewModel: self.viewModel)
-		self.interactor.refresh()
 	}
 }
 
