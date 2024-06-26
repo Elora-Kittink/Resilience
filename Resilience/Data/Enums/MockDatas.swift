@@ -26,10 +26,14 @@ enum MockDatas {
 			genre: "Pommier",
 			variety: "Golden",
 			description: "Pommier à fruits jaunes",
-			bloomingStart: Calendar.current.date(from: DateComponents(year: 2024, month: 3, day: 1)),
-			bloomingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 3, day: 15)),
-			fruitingStart: Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 1)),
-			fruitingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 15)),
+			bloomingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2024, month: 3, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2024, month: 3, day: 15)) ?? Date()
+			),
+			fruitingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 15)) ?? Date()
+			),
 			hardiness: -20,
 			notes: "Porte-greffe : M9"
 		),
@@ -39,10 +43,14 @@ enum MockDatas {
 			genre: "Poirier",
 			variety: "Williams",
 			description: "Poirier à fruits sucrés",
-			bloomingStart: Calendar.current.date(from: DateComponents(year: 2024, month: 4, day: 1)),
-			bloomingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 4, day: 15)),
-			fruitingStart: Calendar.current.date(from: DateComponents(year: 2024, month: 9, day: 1)),
-			fruitingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 9, day: 15)),
+			bloomingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2024, month: 4, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2024, month: 4, day: 15)) ?? Date()
+			),
+			fruitingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2024, month: 9, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2024, month: 9, day: 15)) ?? Date()
+			),
 			hardiness: -25,
 			notes: "Porte-greffe : BA29"
 		),
@@ -52,10 +60,14 @@ enum MockDatas {
 			genre: "Carotte",
 			variety: "Nantaise",
 			description: "Carotte de type Nantaise",
-			bloomingStart: Calendar.current.date(from: DateComponents(year: 2024, month: 5, day: 1)),
-			bloomingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 5, day: 15)),
-			fruitingStart: Calendar.current.date(from: DateComponents(year: 2024, month: 6, day: 1)),
-			fruitingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 6, day: 15)),
+			bloomingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2024, month: 5, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2024, month: 5, day: 15)) ?? Date()
+			),
+			fruitingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2024, month: 6, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2024, month: 6, day: 15)) ?? Date()
+			),
 			hardiness: -10,
 			notes: "Bien arroser"
 		),
@@ -65,10 +77,11 @@ enum MockDatas {
 			genre: "Tulipe",
 			variety: "Triomphe",
 			description: "Tulipe de type Triomphe",
-			bloomingStart: Calendar.current.date(from: DateComponents(year: 2024, month: 6, day: 1)),
-			bloomingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 6, day: 15)),
-			fruitingStart: nil,
-			fruitingEnd: nil,
+			bloomingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2024, month: 6, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2024, month: 6, day: 15)) ?? Date()
+			),
+			fruitingPeriod: nil,
 			hardiness: -15,
 			notes: "Protéger du gel"
 		),
@@ -78,10 +91,11 @@ enum MockDatas {
 			genre: "Basilic",
 			variety: "Genovese",
 			description: "Basilic à grandes feuilles",
-			bloomingStart: Calendar.current.date(from: DateComponents(year: 2024, month: 7, day: 1)),
-			bloomingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 7, day: 15)),
-			fruitingStart: nil,
-			fruitingEnd: nil,
+			bloomingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2024, month: 7, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2024, month: 7, day: 15)) ?? Date()
+			),
+			fruitingPeriod: nil,
 			hardiness: 0,
 			notes: "Semer tous les 15 jours pour récoltes successives"
 		),
@@ -91,10 +105,14 @@ enum MockDatas {
 			genre: "Tomate",
 			variety: "Marmande",
 			description: "Tomate charnue et savoureuse",
-			bloomingStart: Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 1)),
-			bloomingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 15)),
-			fruitingStart: Calendar.current.date(from: DateComponents(year: 2024, month: 10, day: 1)),
-			fruitingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 10, day: 15)),
+			bloomingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 15)) ?? Date()
+			),
+			fruitingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2024, month: 10, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2024, month: 10, day: 15)) ?? Date()
+			),
 			hardiness: 2,
 			notes: "Pailler pour conserver l'humidité"
 		),
@@ -104,10 +122,11 @@ enum MockDatas {
 			genre: "Camomille",
 			variety: "Allemande",
 			description: "Plante utilisée pour les infusions",
-			bloomingStart: Calendar.current.date(from: DateComponents(year: 2024, month: 9, day: 1)),
-			bloomingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 9, day: 15)),
-			fruitingStart: nil,
-			fruitingEnd: nil,
+			bloomingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2024, month: 9, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2024, month: 9, day: 15)) ?? Date()
+			),
+			fruitingPeriod: nil,
 			hardiness: -15,
 			notes: "Récolter les fleurs dès qu'elles s'ouvrent"
 		),
@@ -117,10 +136,14 @@ enum MockDatas {
 			genre: "Ceriser",
 			variety: "Bigarreau",
 			description: "Cerises rouges et sucrées",
-			bloomingStart: Calendar.current.date(from: DateComponents(year: 2024, month: 10, day: 1)),
-			bloomingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 10, day: 15)),
-			fruitingStart: Calendar.current.date(from: DateComponents(year: 2024, month: 12, day: 1)),
-			fruitingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 12, day: 15)),
+			bloomingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2024, month: 10, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2024, month: 10, day: 15)) ?? Date()
+			),
+			fruitingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2024, month: 12, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2024, month: 12, day: 15)) ?? Date()
+			),
 			hardiness: -20,
 			notes: "Tailler après la récolte"
 		),
@@ -130,10 +153,14 @@ enum MockDatas {
 			genre: "Framboisier",
 			variety: "Heritage",
 			description: "Framboises remontantes",
-			bloomingStart: Calendar.current.date(from: DateComponents(year: 2024, month: 11, day: 1)),
-			bloomingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 11, day: 15)),
-			fruitingStart: Calendar.current.date(from: DateComponents(year: 2025, month: 1, day: 1)),
-			fruitingEnd: Calendar.current.date(from: DateComponents(year: 2025, month: 1, day: 15)),
+			bloomingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2024, month: 11, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2024, month: 11, day: 15)) ?? Date()
+			),
+			fruitingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2025, month: 1, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2025, month: 1, day: 15)) ?? Date()
+			),
 			hardiness: -25,
 			notes: "Récolter tous les deux jours"
 		),
@@ -143,40 +170,45 @@ enum MockDatas {
 			genre: "Vigne",
 			variety: "Chasselas",
 			description: "Raisin blanc",
-			bloomingStart: Calendar.current.date(from: DateComponents(year: 2025, month: 2, day: 1)),
-			bloomingEnd: Calendar.current.date(from: DateComponents(year: 2025, month: 2, day: 15)),
-			fruitingStart: Calendar.current.date(from: DateComponents(year: 2025, month: 4, day: 1)),
-			fruitingEnd: Calendar.current.date(from: DateComponents(year: 2025, month: 4, day: 15)),
+			bloomingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2025, month: 2, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2025, month: 2, day: 15)) ?? Date()
+			),
+			fruitingPeriod: (
+				start: Calendar.current.date(from: DateComponents(year: 2025, month: 4, day: 1)) ?? Date(),
+				end: Calendar.current.date(from: DateComponents(year: 2025, month: 4, day: 15)) ?? Date()
+			),
 			hardiness: -18,
 			notes: "Tailler en hiver"
 		),
-//		Plant(
-//			id: "11",
-//			zone: zone1,
-//			genre: "Fleur éternelle",
-//			variety: "Infinita",
-//			description: "Un arbre en fleur toute l'année",
-//			bloomingStart: Calendar.current.date(from: DateComponents(year: 2023, month: 1, day: 1)),
-//			bloomingEnd: Calendar.current.date(from: DateComponents(year: 2024, month: 12, day: 31)),
-//			fruitingStart: nil,
-//			fruitingEnd: nil,
-//			hardiness: 0,
-//			notes: "Toujours en fleur"
-//		),
+		Plant(
+			id: "11",
+			zone: zone1,
+			genre: "Fleur éternelle",
+			variety: "Infinita",
+			description: "Un arbre en fleur toute l'année",
+			bloomingPeriod: (
+				start: Calendar.current.date(byAdding: .year, value: -1, to: Date()) ?? Date(),
+				end: Calendar.current.date(byAdding: .year, value: 1, to: Date()) ?? Date()
+			),
+			fruitingPeriod: nil,
+			hardiness: 0,
+			notes: "Toujours en fleur"
+		),
 		Plant(
 			id: "12",
 			zone: zone2,
 			genre: "Arbre fruitier magique",
 			variety: "Fructus Perpetuus",
 			description: "Un arbre en fructification toute l'année",
-			bloomingStart: nil,
-			bloomingEnd: nil,
-			fruitingStart: Calendar.current.date(byAdding: .year, value: -1, to: Date()),
-			fruitingEnd: Calendar.current.date(byAdding: .year, value: 1, to: Date()),
+			bloomingPeriod: nil,
+			fruitingPeriod: (
+				start: Calendar.current.date(byAdding: .year, value: -1, to: Date()) ?? Date(),
+				end: Calendar.current.date(byAdding: .year, value: 1, to: Date()) ?? Date()
+			),
 			hardiness: 0,
 			notes: "Toujours en fruit"
-		)
-	]
+		)	]
 	
 	static let tasks: [TodoTask] = [
 		TodoTask(id: "59765", name: "Planter les tomates", isCompleted: false, priority: .high),

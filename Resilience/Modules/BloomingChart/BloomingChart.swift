@@ -7,62 +7,89 @@
 
 import Foundation
 import SwiftUI
+import Charts
 
 struct BloomingChart: View {
-	var body: some View {
-		ZStack {
-			ForEach(0..<360, id: \.self) { degree in
-				SegmentChart(degree: degree)
-			}
-		}
-		.aspectRatio(1, contentMode: .fit)
-	}
-}
-
-struct SegmentChart: View {
-	let degree: Int
-	let plants = MockDatas.plants
+	var plants: [Plant] = MockDatas.plants
 	
 	var body: some View {
-		GeometryReader { geometry in
-			Path { path in
-				let center = CGPoint(x: geometry.size.width / 2, y: geometry.size.height / 2)
-				let radius = min(geometry.size.width, geometry.size.height) / 2
-				let innerRadius = radius * 0.7
-				let startAngle = Angle(degrees: Double(degree))
-				let endAngle = Angle(degrees: Double(degree + 1))
-				
-				path.move(to: CGPoint(x: center.x + innerRadius * Foundation.cos(startAngle.radians), 
-									  y: center.y + innerRadius * sin(startAngle.radians)))
-				path.addLine(to: CGPoint(x: center.x + radius * Foundation.cos(startAngle.radians), 
-										 y: center.y + radius * sin(startAngle.radians)))
-				path.addArc(center: center, 
-							radius: radius,
-							startAngle: startAngle,
-							endAngle: endAngle, 
-							clockwise: false)
-				path.addLine(to: CGPoint(x: center.x + innerRadius * Foundation.cos(endAngle.radians), 
-										 y: center.y + innerRadius * sin(endAngle.radians)))
-				path.addArc(center: center, 
-							radius: innerRadius,
-							startAngle: endAngle,
-							endAngle: startAngle, 
-							clockwise: true)
-			}
-			.fill(isAnyPlantBlooming(in: degree) ? Color.green : Color.gray)
-		}
-	}
-	
-	func isAnyPlantBlooming(in degree: Int) -> Bool {
-		let dayOfYear = degree
-		let calendar = Calendar.current
+		let bloomingPeriods = plants.compactMap { $0.bloomingPeriod }
 		
-		return plants.contains { plant in
-			guard let bloomingStart = plant.bloomingStart, let bloomingEnd = plant.bloomingEnd else { return false }
-			let startDay = calendar.ordinality(of: .day, in: .year, for: bloomingStart) ?? 0
-			let endDay = calendar.ordinality(of: .day, in: .year, for: bloomingEnd) ?? 0
-			return startDay <= dayOfYear && dayOfYear <= endDay
+		ZStack {
+			Chart {
+				ForEach(1...365, id: \.self) { day in
+					// Vérifie si le jour actuel est dans une période de floraison
+					let isBlooming = bloomingPeriods.contains { period in
+						let startDay = dayOfYear(from: period.start)
+						let endDay = dayOfYear(from: period.end)
+						return day >= startDay && day <= endDay
+					}
+					
+					// Crée un segment pour chaque jour de l'année
+					SectorMark(
+						angle: .value("Day", Double(day)),
+						innerRadius: .ratio(0.5),
+						outerRadius: .ratio(1.0)
+					)
+					.foregroundStyle(isBlooming ? Color.pink.opacity(0.5) : Color.gray.opacity(0.3))
+				}
+			}
+			.aspectRatio(1, contentMode: .fit)
+			.overlay(
+				GeometryReader { geo in
+					let center = CGPoint(x: geo.size.width / 2, y: geo.size.height / 2)
+					ForEach(1...12, id: \.self) { month in
+						let startAngle = Angle(degrees: Double(month - 1) / 12.0 * 360.0)
+						let endAngle = Angle(degrees: Double(month) / 12.0 * 360.0)
+						let midAngle = Angle(degrees: (startAngle.degrees + endAngle.degrees) / 2.0)
+						let monthName = DateFormatter().monthSymbols[month - 1]
+						
+						// Calcul des coordonnées des lignes délimitant les mois
+						let x1 = center.x + cos(startAngle.radians) * geo.size.width / 2
+						let y1 = center.y + sin(startAngle.radians) * geo.size.height / 2
+						
+						let x2 = center.x + cos(endAngle.radians) * geo.size.width / 2
+						let y2 = center.y + sin(endAngle.radians) * geo.size.height / 2
+						
+						// Dessine les lignes délimitant chaque mois
+						Path { path in
+							path.move(to: center)
+							path.addLine(to: CGPoint(x: x1, y: y1))
+							path.move(to: center)
+							path.addLine(to: CGPoint(x: x2, y: y2))
+						}
+						.stroke(Color.gray, style: StrokeStyle(lineWidth: 2, dash: [5, 5]))
+						
+						// Affiche les noms des mois
+						Text(monthName)
+							.font(.footnote)
+							.rotationEffect(midAngle)
+							.position(
+								x: center.x + cos(midAngle.radians) * geo.size.width / 6,
+								y: center.y + sin(midAngle.radians) * geo.size.height / 6
+							)
+					}
+				}
+			)
 		}
+	}
+	
+	private func textWidth(_ text: String, font: UIFont) -> CGFloat {
+		let attributes: [NSAttributedString.Key: Any] = [.font: font]
+		let size = text.size(withAttributes: attributes)
+		return size.width
+	}
+	
+	private func dayOfYear(from date: Date?) -> Int {
+		guard let date = date else { return 0 }
+		let calendar = Calendar.current
+		return calendar.ordinality(of: .day, in: .year, for: date) ?? 1
+	}
+	
+	private func monthName(for month: Int) -> String {
+		let formatter = DateFormatter()
+		formatter.dateFormat = "MMMM"
+		return formatter.monthSymbols[month - 1]
 	}
 }
 
