@@ -13,7 +13,7 @@ struct BloomingChart: View {
 	var plants: [Plant] = MockDatas.plants
 	
 	var body: some View {
-		let bloomingPeriods = plants.compactMap { $0.bloomingPeriod }
+		let bloomingPeriods = plants.flatMap { $0.bloomingPeriods ?? [] }
 		let angles = calculateMonthAngles()
 		
 		ZStack {
@@ -24,7 +24,6 @@ struct BloomingChart: View {
 					let isBlooming = bloomingPeriods.contains { period in
 						let startDay = dayOfYear(from: period.start)
 						let endDay = dayOfYear(from: period.end)
-						//						print("\(day >= startDay && day <= endDay)")
 						return day >= startDay && day <= endDay
 					}
 					

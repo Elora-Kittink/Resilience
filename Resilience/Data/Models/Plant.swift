@@ -15,8 +15,8 @@ struct Plant: Identifiable {
 	let genre: String
 	let variety: String?
 	let description: String?
-	let bloomingPeriod: (start: Date, end: Date)?
-	let fruitingPeriod: (start: Date, end: Date)?
+	let bloomingPeriods: [(start: Date, end: Date)]?
+	let fruitingPeriods: [(start: Date, end: Date)]?
 //	let multiplicationMethods: [MultiplicationMethod]
 //	let multiplicationDates: [Date]
 	let hardiness: Int?
@@ -24,16 +24,24 @@ struct Plant: Identifiable {
 //	let quantity: Int
 	
 	var isInBloom: Bool {
-		guard let bloomingPeriod = bloomingPeriod else { return false }
+		guard let bloomingPeriods = bloomingPeriods else { return false }
 		let today = Date()
-		return today >= bloomingPeriod.start && today <= bloomingPeriod.end
+		for period in bloomingPeriods {
+			if today >= period.start && today <= period.end {
+				return true
+			}
+		}
+		return false
 	}
 	
 	var isInFruiting: Bool {
-		guard let fruitingPeriod = fruitingPeriod else { return false }
+		guard let fruitingPeriods = fruitingPeriods else { return false }
 		let today = Date()
-		return today >= fruitingPeriod.start && today <= fruitingPeriod.end
+		for period in fruitingPeriods {
+			if today >= period.start && today <= period.end {
+				return true
+			}
+		}
+		return false
 	}
 }
-
-
