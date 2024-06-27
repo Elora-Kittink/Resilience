@@ -12,6 +12,7 @@ struct GardenView: View {
 	
 	// MARK: State
 	@ObservedObject var viewModel: GardenViewModel
+	@State private var showSheet = false
 	
 	var body: some View {
 		VStack {
@@ -28,7 +29,6 @@ struct GardenView: View {
 							.foregroundColor(.green)
 					}
 				}
-				
 			}
 			Button(action: {
 				print("Bouton + appuyé")
@@ -37,6 +37,13 @@ struct GardenView: View {
 					.resizable()
 					.frame(width: 20, height: 20)
 					.padding()
+			}
+			Button(action: {
+				showSheet.toggle()
+			}) {
+				Image(systemName: "chart.pie")
+			}.sheet(isPresented: $showSheet) {
+				BloomingChart()
 			}
 		}
 	}
